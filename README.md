@@ -19,6 +19,58 @@
 1.Install
 > npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 
+2. CRACO
+> npm install @craco/craco
+
+3.pakage.json Edit
+{
+    // ...
+    "scripts": {
+-     "start": "react-scripts start",
+-     "build": "react-scripts build",
+-     "test": "react-scripts test",
++     "start": "craco start",
++     "build": "craco build",
++     "test": "craco test",
+      "eject": "react-scripts eject"
+    },
+  }
+
+3.craco.config.js setup
+module.exports = {
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
+}
+
+4.tailwind.config.js create
+> npx tailwindcss-cli@latest init
+
+5.tailwind.config.js setup
+  module.exports = {
+-   purge: [],
++   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+      extend: {},
+    },
+    variants: {
+      extend: {},
+    },
+    plugins: [],
+  }
+
+6. ./src/index.css edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 ```
 
 ## Based on following plugins or services
