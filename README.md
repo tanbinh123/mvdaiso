@@ -6,7 +6,7 @@
 ## Todo
 - [X] 프론트 화면기획 및 구축
 - [X] Tailwind CSS프레임워크 설정
-- [ ] React.js 기반 초기 작업 진행
+- [ ] ReactJS 기반 초기 작업 진행
 - [ ] 백앤드 php - Laravel RestAPI 기초작업
 - [ ] 백앤드 springboot 
 - [ ] 기능 - 지도 API선정 :: 네이버 API활용
@@ -15,8 +15,9 @@
 
 ## Based on following plugins or services
 - RestAPI
+- ReactJS
 - Npm 7.21.0 / Yarn 1.22.10
-- Tailwind css v2.2.14
+- Tailwind css v2.2.14[Tailwindcss](https://tailwindcss.com/).
 - Laravel v7.3
 - Laravel - MongoDB [laravel-mongodb#query-builder](https://github.com/jenssegers/laravel-mongodb#query-builder).
 - Laravel - Schedul
