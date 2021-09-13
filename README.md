@@ -16,7 +16,9 @@
 ## Setup His
 ### 1) Tailwind 
 ```
-test
+1.Install
+> npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+
 ```
 
 ## Based on following plugins or services
