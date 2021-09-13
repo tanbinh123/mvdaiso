@@ -250,18 +250,18 @@ function App() {
 
       <div className="flex-none justify-between w-2/12 min-h-screen text-sm min-w-4 max-w-6">
         {date.map((date) => (
-          <div className="h-11 bg-green-300 hover:bg-green-100 rounded-tr-lg rounded-br-lg text-center py-3 mb-px cursor-pointer">
+          <div className="h-11 bg-pink-100 hover:bg-pink-200 rounded-tr-lg rounded-br-lg text-center py-3 mb-px cursor-pointer">
             <span className="inline-block">{date.year}</span>
           </div>
         ))}
       </div>
 
       <div className="flex flex-col justify-between w-10/12 min-h-screen text-sm">
-
         <header className="h-10 p-2 text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Movie Daiso</h2>
         </header>
-        <main className="flex-grow bg-gray-50 p-2">
+
+        <main className="flex-grow p-4">
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-4">
             {movie.map((movie) => (
               <div key={movie.id} className="group relative">
@@ -292,8 +292,13 @@ function App() {
           </div>
         </main>
 
-        <footer className="h-10 px-2 py-2 text-sm border-t-2">
-          <span>©2021</span><span>무비다이소</span>
+        <footer className="h-16 px-2 py-4 text-xs border-t-2">
+          <div>
+            * 본 서비스는 영화진흥위원회 API서비스를 이용한 데이터를 기반으로 제공하고 있습니다.
+          </div>
+          <div>
+            <span>©2021</span><span>무비다이소</span>
+          </div>
         </footer>
       </div>
 

@@ -13,6 +13,12 @@
 - [ ] 기능 - 지도 마커 표기
 - [ ] 기능 - 전체 측정소정보 목록(getMsrstnList) 데이터 응답받아 받아 dmXY 값을 기준으로 전체측정소 데이터 스케쥴러 작성 및 마커 표기
 
+## Setup His
+### 1) Tailwind 
+```
+test
+```
+
 ## Based on following plugins or services
 - RestAPI
 - ReactJS
