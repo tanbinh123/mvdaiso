@@ -16,13 +16,13 @@
 ## Setup His
 ### 1) Tailwind 
 ```
-1.Install
+1.Tailwindscss 설치
 > npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 
-2. CRACO
+2. CRACO 설치
 > npm install @craco/craco
 
-3.pakage.json Edit
+3.pakage.json start / build / test 수정
 {
     // ...
     "scripts": {
@@ -36,7 +36,7 @@
     },
   }
 
-3.craco.config.js setup
+3.craco.config.js 설정
 module.exports = {
   style: {
     postcss: {
@@ -48,10 +48,10 @@ module.exports = {
   },
 }
 
-4.tailwind.config.js create
+4.tailwind.config.js 생성
 > npx tailwindcss-cli@latest init
 
-5.tailwind.config.js setup
+5.tailwind.config.js 설정
   module.exports = {
 -   purge: [],
 +   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -65,7 +65,7 @@ module.exports = {
     plugins: [],
   }
 
-6. ./src/index.css edit
+6. ./src/index.css 수정
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
