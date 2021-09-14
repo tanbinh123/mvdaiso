@@ -7,7 +7,7 @@
 - [X] 프론트 화면기획 및 구축
 - [X] 프론트 Tailwind CSS프레임워크 Setup
 - [X] 프론트 디자인 작업
-- [ ] 프론트 ReactJS 프레임워크 도입 검토
+- [ ] 프론트 ReactJS 프레임워크 (express / next) 도입 검토
 - [ ] 백앤드 php - Laravel RestAPI 기초 작업 이후, 백앤드 교체
 - [ ] 백앤드 springboot 
 - [ ] 기능 - 지도 API선정 :: 네이버 API활용
