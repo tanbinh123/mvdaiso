@@ -81,8 +81,4 @@ module.exports = {
 - Laravel v7.3
 - Laravel - MongoDB [laravel-mongodb#query-builder](https://github.com/jenssegers/laravel-mongodb#query-builder).
 - Laravel - Schedul
-- Laravel - Job
-
-## Contact Me
-- 리뷰 및 조언 언제나 환영합니다.
-- honeypigman@gmail.com
+- Laravel - Job 
