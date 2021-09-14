@@ -5,6 +5,15 @@
 .min-w-4 {
     min-width: 4rem;
 }
+.min-w-6 {
+    min-width: 6rem;
+}
+.min-w-8 {
+    min-width: 8rem;
+}
+.min-w-10 {
+    min-width: 10rem;
+}
 .max-w-6 {
     max-width: 6rem;
 }
