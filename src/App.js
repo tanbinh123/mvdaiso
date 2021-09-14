@@ -13,7 +13,7 @@ function App() {
   const movie = [
     {
       id: 1,
-      name: '샹치와 텐링즈의 전설',
+      name: '샹치와 텐링즈의  전설',
       href: '#',
       imageSrc: 'https://www.kobis.or.kr/common/mast/movie/2021/08/thumb_x289/thn_a7bc5615bc4247319aa95e1372fb2fce.jpg',
       title: '샹치와 텐링즈의 전설',
