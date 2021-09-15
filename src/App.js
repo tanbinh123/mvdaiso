@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+import { Route, Link, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
+import Main from './Main';
+import About from './About';
+import Today from './MovieTodayRcmd';
+import Boxoffice from './MovieBoxOffice';
 
 function App() {
   const date = [
@@ -56,12 +61,12 @@ function App() {
     setGnbStatus(prevStatus => prevStatus ? false : true)
   };
   const GnbMenu = () => (
-    <div id="gnbMenu" class="pt-4 pb-8">
-      <div class="flex flex-col w-full mx-auto px-4">
-        <div class="flex flex-col space-y-2 text-gray-500">
-          <a class="hover:underline menu-item-root" href="/about">무비다이소 소개</a>
-          <a class="hover:underline menu-item-root" href="/pick">오늘의 영화추천</a>
-          <a class="hover:underline menu-item-root" href="/hit">역대급 영화추천</a>
+    <div id="gnbMenu" className="pt-4 pb-8">
+      <div className="flex flex-col w-full mx-auto px-4">
+        <div className="flex flex-col space-y-2 text-gray-500">
+          <Link to="/about" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>서비스 소개</Link>
+          <Link to="/today" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>추천영화</Link>
+          <Link to="/boxoffice" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>흥행영화</Link>
         </div>
       </div>
     </div>
@@ -77,57 +82,33 @@ function App() {
 
       <header className="w-full min-w-10 h-14 text-center p-3">
         <div className="inline-block relative">
-          <h2 className="text-2xl font-extrabold tracking-tight text-green-600">Movie Daiso</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-green-600"><a href="/">Movie Daiso</a></h2>
         </div>
         <div className="inline-block absolute py-1 right-2 cursor-pointer" onClick={onClickGnb}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </div>
       </header>
 
       {/* Gnb Menu */}
       { gnbStatus ? <GnbMenu /> : null}
 
-      <div class="flex min-h-screen">
-        <aside className="flex-none w-2/12 min-h-full min-w-4 max-w-6 text-sm text-white">
-          {date.map((date) => (
-            <div className="h-11 bg-green-500 hover:bg-green-400 rounded-tr-lg rounded-br-lg text-center py-3 mb-px cursor-pointer">
-              <span className="inline-block">{date.year}</span>
-            </div>
-          ))}
-        </aside>
-
-        <main className="flex-grow w-10/12 px-4">
-          <div className="min-w-15 h-full grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-4">
-            {movie.map((movie) => (
-              <div key={movie.id} className="group relative">
-                <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                  <img
-                    src={movie.imageSrc}
-                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                  />
-                </div>
-                <div className="w-full h-20 absolute -my-20 rounded-b-md text-white bg-opacity-90  bg-green-500 border-green-500 p-4">
-                  <h1 className="text-md text-center px-4">
-                    <a href={movie.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      <div className="ellipses">{movie.name}</div>
-                    </a>
-                  </h1>
-                  <div className="text-sm text-center">
-                    <span className="p-1">{movie.openDt}</span>|
-                    <span className="p-1">{movie.runtime}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </main>
+      <div className="min-h-screen">
+        {/* Router Setup */}
+        <Switch>
+          <Route path="/" exact={true}>
+            <Main date={date} movie={movie}></Main>
+          </Route>
+          <Route path="/about" component={About} />
+          <Route path="/today" component={Today} />
+          <Route path="/boxoffice" component={Boxoffice} />
+        </Switch>
       </div>
+
       <footer className="h-12 my-5 px-2 py-4 text-xs border-t-2 border-opacity-80">
         <div>* 본 서비스는 영화진흥위원회 API서비스 정보를 기반으로 제공하고 있습니다.</div>
         <div><span>©2021</span><span>무비다이소</span></div>
       </footer>
+
     </div >
   );
 }

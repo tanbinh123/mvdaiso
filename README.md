@@ -4,23 +4,37 @@
 - 데이터출처 [영화진흥위원회](http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do?serviceId=searchMovieInfo).
 
 ## Todo
-- [X] 프론트 화면기획 및 구축
-- [X] 프론트 Tailwind CSS프레임워크 Setup
-- [X] 프론트 디자인 작업 (기본 메인 페이지 작업만 수행하자)
-- [ ] 프론트 ReactJS 프레임워크 (express / next) 도입 검토
-- [ ] 프론트 ReactJS SPA + Route
-- [ ] 프론트 ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
-- [ ] 프론트 ReactJS 코드스플리팅
-- [ ] 백앤드 php - Laravel RestAPI 기초 작업 이후, 백앤드 교체
-- [ ] 백앤드 springboot 
-- [ ] 기능 - 지도 API선정 :: 네이버 API활용
-- [ ] 기능 - 지도 마커 표기
-- [ ] 기능 - 전체 측정소정보 목록(getMsrstnList) 데이터 응답받아 받아 dmXY 값을 기준으로 전체측정소 데이터 스케쥴러 작성 및 마커 표기
+- [X] Front-End 기초작업
+- [X] Front-End Tailwind CSS프레임워크 Setup
+- [X] Front-End 디자인 작업 (기본 메인 페이지 작업만 수행하자)
+- [X] Front-End 화면기획 - 메인
+- [ ] Front-End 화면기획 - 메인 > 더보기 ( 무한-스크롤링 )
+- [X] Front-End 화면기획 - 메뉴 > 소개
+- [ ] Front-End 화면기획 - 메뉴 > 오늘의 영화 추천
+- [ ] Front-End 화면기획 - 메뉴 > 박스오피스 영화
+- [ ] Front-End 화면기획 - 상세정보
+- [ ] Front-End 화면기획 - 상세정보 > 평점
+- [ ] Front-End 화면기획 - 상세정보 > 댓글
+- [ ] Front-End 화면기획 - 상세정보 > 내주변 상영관 바로가기
+- [ ] Front-End 연동 - 메인
+- [ ] Front-End 연동 - 메뉴 > 오늘의 영화 추천
+- [ ] Front-End 연동 - 메뉴 > 박스오피스 영화
+- [ ] Front-End 연동 - 상세정보
+- [ ] Front-End ReactJS 프레임워크 (express / next) 도입 검토
+- [ ] Front-End CSS 모듈화
+- [X] Front-End ReactJS SPA + Route
+- [ ] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
+- [ ] Front-End ReactJS 코드스플리팅
+- [ ] Back-End Laravel RestAPI 기초 작업 
+- [ ] Back-End Laravel 연동사 연동 작업
+- [ ] Back-End 날씨, 나이, 오늘 가장 많이 상영된 영화, 장르 등의 데이터를 기반으로 추천 매트릭스 로직 구현
+- [ ] Back-End MongoDB 데이터 적재-Collection::movieDaiso
+- [ ] Back-End springboot 작업 연동 시, BE
 
 ## Setup His
 ### 1) Tailwind 
 ```
-1.Tailwindscss 설치
+1.Tailwindcss 설치
 > npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 
 2. CRACO 설치
@@ -73,9 +87,29 @@ module.exports = {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
 
+### 2) ReactJS Router Setup
+```
+1. react-router-dom 추가
+> yarn add react-router-dom
+
+2. ./src/index.js 설정
+> import { BrowserRouter } from 'react-router-dom';
+> render 함수 <BrowserRouter> 추가
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+
+3. 컴포넌트 선언
+> import { Route, Link, Switch } from 'react-router-dom';
+> Route 컴포넌트 사용 시, exact={true} 로 설정해야, URL의 '/' 규칙으로 발생하는 중복을 피할 수 있습니다. 
 
 ```
+
 
 ## Based on following plugins or services
 - RestAPI
