@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Route, Link, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
-import Main from './Main';
-import About from './About';
-import Today from './MovieTodayRcmd';
-import Boxoffice from './MovieBoxOffice';
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
+import Main from './mv/Main';
+import About from './mv/About';
+import Today from './mv/MovieTodayRcmd';
+import Boxoffice from './mv/MovieBoxOffice';
 
 function App() {
+
   const date = [
     { year: 2021 }, { year: 2020 }, { year: 2019 }, { year: 2018 }, { year: 2017 },
     { year: 2016 }, { year: 2015 }, { year: 2014 }, { year: 2013 }, { year: 2012 },
     { year: 2011 }, { year: 2010 }, { year: 2009 }, { year: 2008 }, { year: 2007 },
     { year: 2006 }, { year: 2005 }, { year: 2004 }, { year: 2003 }, { year: 2002 },
-    { year: 2001 }, { year: 2000 }
+    { year: 2001 }, { year: 2000 },
   ]
 
   const movie = [
@@ -56,42 +59,22 @@ function App() {
     // More products...
   ]
 
-  const [gnbStatus, setGnbStatus] = useState(false);
-  const onClickGnb = (e) => {
-    setGnbStatus(prevStatus => prevStatus ? false : true)
-  };
-  const GnbMenu = () => (
-    <div id="gnbMenu" className="pt-4 pb-8">
-      <div className="flex flex-col w-full mx-auto px-4">
-        <div className="flex flex-col space-y-2 text-gray-500">
-          <Link to="/about" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>서비스 소개</Link>
-          <Link to="/today" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>추천영화</Link>
-          <Link to="/boxoffice" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>흥행영화</Link>
-        </div>
-      </div>
-    </div>
-  );
-
-
   return (
-    <div className="">
-      {/*  Head */}
+    <div>
+
+      {/*  Head Start */}
       <Helmet>
         <title>무비다이소</title>
       </Helmet>
+      {/*  Head End */}
 
-      <header className="w-full min-w-10 h-14 text-center p-3">
-        <div className="inline-block relative">
-          <h2 className="text-2xl font-extrabold tracking-tight text-green-600"><a href="/">Movie Daiso</a></h2>
-        </div>
-        <div className="inline-block absolute py-1 right-2 cursor-pointer" onClick={onClickGnb}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </div>
-      </header>
 
-      {/* Gnb Menu */}
-      { gnbStatus ? <GnbMenu /> : null}
+      {/* Header Start */}
+      <Header />
+      {/* Header End */}
 
+
+      {/* Main Start */}
       <div className="min-h-screen">
         {/* Router Setup */}
         <Switch>
@@ -103,11 +86,12 @@ function App() {
           <Route path="/boxoffice" component={Boxoffice} />
         </Switch>
       </div>
+      {/* Main End */}
 
-      <footer className="h-12 my-5 px-2 py-4 text-xs border-t-2 border-opacity-80">
-        <div>* 본 서비스는 영화진흥위원회 API서비스 정보를 기반으로 제공하고 있습니다.</div>
-        <div><span>©2021</span><span>무비다이소</span></div>
-      </footer>
+
+      {/* Footer Start*/}
+      <Footer />
+      {/* Footer End*/}
 
     </div >
   );
