@@ -14,15 +14,17 @@
 
 ## Todo-2 ( * ro : Read Only )
 - [X] Front-End 화면기획 - 상세정보
-- [ ] Front-End 화면기획 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
-- [ ] Front-End 화면기획 - 상세정보 > 평점 ( * Naver 연동 ) : ro
-- [ ] Front-End 화면기획 - 상세정보 > 내주변 상영관 바로가기 : ro
+- [X] Front-End 화면기획 - 상세정보 > 썸네일
+- [X] Front-End 화면기획 - 상세정보 > 평점
+- [X] Front-End 화면기획 - 상세정보 > 내주변 상영관 바로가기
 - [ ] Front-End 연동 - 메인
 - [ ] Front-End 연동 - 상세정보
-- [ ] Front-End 연동 - 메뉴 > 오늘의 영화 추천
-- [ ] Front-End 연동 - 메뉴 > 박스오피스 영화
+- [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
+- [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
+- [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
 - [ ] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
-- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk * 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
+- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어)
+* 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
 - [ ] Back-End Laravel RestAPI 기초 작업 
 - [ ] Back-End Laravel 영화진흥원 연동사 연동 작업
 - [ ] Back-End Laravel 네이버 연동사 연동 작업 ( 평점 / 썸네일 )
@@ -117,8 +119,41 @@ ReactDOM.render(
 3. 컴포넌트 선언
 > import { Route, Link, Switch } from 'react-router-dom';
 > Route 컴포넌트 사용 시, exact={true} 로 설정해야, URL의 '/' 규칙으로 발생하는 중복을 피할 수 있습니다. 
+```
+### 3) ReactJS Redyx Setup
+```
+1. redux 추가
+> yarn add redux
+> yarn add react-redux
+
+2. modules 디렉토리 생성
+> cd ./src/
+> mkdir modules
+
+3.modules 디렉토리 구조
+modules
+- index.js
+- *.js ( 기능별 생성 리듀서 )
+
+4. ./src/modules/index.js 파일 작성 
+-combineReducers 유틸 함수를 사용하여, 생성된 리듀서를 하나로 합칠 수 있다.
+
+import { combineReducers } from 'redux';
+import main from './main';
+import detail from './detail';
+
+const rootReducer = combineReducers({
+    main,
+    detail
+});
+
+export default rootReducer;
+
+5. Provider 컴포넌트를 이용하여 전달
+
 
 ```
+
 
 ## Project Spec
 - ReactJS
