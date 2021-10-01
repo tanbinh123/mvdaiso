@@ -1,24 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import MovieDetail from '../components/MovieDetail';
+import Detail from '../components/Detail';
 import { setModal } from '../modules/main';
 
-const MovieDetailContainer = ({
-    date, movies, setModal
+const DetailContainer = ({
+    pick, setModal
 }) => {
     return (
-        <MovieDetail movies={movies} setModal={setModal} />
+        <Detail movies={pick} setModal={setModal} />
     );
 };
 
 export default connect(
     //  State에 선언 방식은 state.[action.js].[state name]
     state => ({
-        movies: state.main.movies
+        pick: state.main.pick
     }),
     dispatch =>
         bindActionCreators({
             setModal
         }, dispatch),
-)(MovieDetailContainer);
+)(DetailContainer);

@@ -22,13 +22,11 @@
 - [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
 - [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
 - [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
-- [ ] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
-- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어)
-* 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
-- [ ] Back-End Laravel RestAPI 기초 작업 
-- [ ] Back-End Laravel 영화진흥원 연동사 연동 작업
-- [ ] Back-End Laravel 네이버 연동사 연동 작업 ( 평점 / 썸네일 )
-- [ ] Back-End MongoDB 데이터 적재-Collection::movieDaiso
+- [X] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
+- [ ] Front-End ReactJS 리덕스 개념은 gist에 별도로 정리해두자
+- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어) 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
+- [ ] Back-End Springboot 로컬셋팅
+- [ ] Back-End DB-Mysql 로컬셋팅
 
 ## Todo-3
 - [ ] Front-End 화면기획 - 메인 > 더보기 ( 무한-스크롤링 )
@@ -155,20 +153,25 @@ export default rootReducer;
 ```
 
 
-## Project Spec
+## Project Spec and Theory
 - ReactJS
 > SPA
+> Routing
+> React-redux
 > Redux-redux-saga / redux-thunk
 
 - SpringBoot
 > Quartz
 
 - DB - Mysql
-> databse moview
 
 - DevOps
 > Docker
 > Git FORK / master develop release
+
+- Version Control
+> github used.
+> rules gitflow.
 
 - Tools
   intellij
