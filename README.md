@@ -24,7 +24,8 @@
 - [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
 - [X] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
 - [X] Front-End ReactJS 리덕스 개념은 gist에 별도로 정리해두자
-- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어) 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
+- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어) * 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
+- [ ] Front-End ReactJS 영화 검색 - 디바운스
 - [ ] Back-End Springboot 로컬셋팅
 - [ ] Back-End DB-Mysql 로컬셋팅
 
@@ -118,7 +119,7 @@ ReactDOM.render(
 > import { Route, Link, Switch } from 'react-router-dom';
 > Route 컴포넌트 사용 시, exact={true} 로 설정해야, URL의 '/' 규칙으로 발생하는 중복을 피할 수 있습니다. 
 ```
-### 3) ReactJS Redyx Setup
+### 3) ReactJS Redux Setup
 ```
 1. redux 추가
 > yarn add redux
@@ -149,33 +150,38 @@ export default rootReducer;
 
 5. Provider 컴포넌트를 이용하여 전달
 
+6. redux-actions  
+> yarn add redux-actions
+> payload 사용 시, 객체 비구조화 할당으로 선언하여, 향후 데이터 정확도 유지
 
+
+* Redux Dev Tools Install
+> yarn add redux-devtools-extension
+> index.js
+```
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger, ReduxThunk)));
 ```
 
+> https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?utm_source=chrome-ntp-icon
 
-## Project Spec and Theory
-- ReactJS
-> SPA
-> Routing
-> React-redux
-> Redux-redux-saga / redux-thunk
+```
+### 4) ReactJS Redux logger Setup
+```
+1. yarn add redux-logger
+2. ./src/index.js 설정
+import { createLogger } from 'redux-logger'
 
-- SpringBoot
-> Quartz
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(logger));
+```
 
-- DB - Mysql
+### 5) ReactJS Redux Thunk Setup
+```
+1. yarn add redux-thunk
+2. API Called Used axio
+  yarn add axios
 
-- DevOps
-> Docker
-> Git FORK / master develop release
-
-- Version Control
-> github used.
-> rules gitflow.
-
-- Tools
-  intellij
-
+```
 
 ## Based on following plugins or services
 - RestAPI

@@ -59,7 +59,7 @@ const About = () => {
                     <strong className="mx-2">데이터 출처</strong>
                 </h2>
                 <p className="mt-1 text-lg text-justify text-gray-600">
-                    영화진흥위원회<a href='http://www.kofic.or.kr' target='_blank'>(http://www.kofic.or.kr)</a> Open API 서비스를 활용한 데이터를 기반으로 정보를 활용 및 제공하고 있습니다.
+                    영화진흥위원회<a href='http://www.kofic.or.kr' target='_blank' rel="noreferrer">(http://www.kofic.or.kr)</a> Open API 서비스를 활용한 데이터를 기반으로 정보를 활용 및 제공하고 있습니다.
                 </p>
             </div>
         </div>

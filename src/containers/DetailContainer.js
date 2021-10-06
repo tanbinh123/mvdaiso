@@ -4,21 +4,25 @@ import { bindActionCreators } from 'redux';
 import Detail from '../components/Detail';
 import { setModal } from '../modules/main';
 
+const { useEffect } = React;
+
 const DetailContainer = ({
-    pick, setModal
+    movieCd, setModal
 }) => {
+    useEffect(() => {
+
+    }, []);
     return (
-        <Detail movies={pick} setModal={setModal} />
+        <Detail code={movieCd} setModal={setModal} />
     );
 };
 
 export default connect(
     //  State에 선언 방식은 state.[action.js].[state name]
-    state => ({
-        pick: state.main.pick
+    ({ main }) => ({
+        movieCd: main.movieCd
     }),
-    dispatch =>
-        bindActionCreators({
-            setModal
-        }, dispatch),
+    {
+        setModal
+    }
 )(DetailContainer);

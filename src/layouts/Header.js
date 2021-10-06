@@ -15,6 +15,7 @@ const Header = () => {
                     <Link to="/about" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>서비스 소개</Link>
                     <Link to="/today" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>추천영화</Link>
                     <Link to="/boxoffice" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>흥행영화</Link>
+                    <Link to="/test" className="hover:underline menu-item-root" onClick={() => setGnbStatus(false)}>API TEST</Link>
                 </div>
             </div>
         </div>
