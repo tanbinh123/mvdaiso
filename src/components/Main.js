@@ -2,16 +2,23 @@ import React from 'react';
 import DetailContainer from '../containers/DetailContainer';
 
 const Main = ({ list, modal, setModal }) => {
-    console.log({ list })
     return (
         < div className="flex" >
             < main className="flex-grow w-full px-4 max-w-4xl mx-auto" >
-                <div className="min-w-15 h-full grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="min-w-15 h-full grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {list && (list.map((movie, idx) => (
-                        <div key={movie.movieCd} className="movie-card group relative container mx-auto  bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 duration-200" onClick={() => setModal(movie.movieCd, true)}>
+                        <div key={movie.movieCd} className="movie-card group relative container mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 duration-200" onClick={() => setModal(movie.movieCd, true)}>
                             <div className="w-full h-full bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-80 lg:h-80 lg:aspect-none cursor-pointer">
                                 <div className="w-full h-full py-44 md:py-28 text-center absolute">
-                                    <span className="text-gray-500 text-2xl md:text-lg font-bold ellipses">{movie.movieNm}</span>
+                                    <span className="text-gray-500 text-2xl md:text-lg font-bold ellipses">
+                                        <a href="#" className="inline-block rounded-sm text-white 
+                                        bg-green-600 hover:bg-green-500 duration-300 
+                                        text-md font-bold 
+                                        mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
+                                        opacity-90 hover:opacity-100">
+                                            {movie.movieCd}
+                                        </a>
+                                    </span>
                                 </div>
                                 <img
                                     // src={movie.imageSrc}
@@ -23,7 +30,7 @@ const Main = ({ list, modal, setModal }) => {
                                     <h1 className="text-md text-center px-4">
                                         <a href="#`">
                                             <span aria-hidden="true" className="absolute inset-0" />
-                                            <div className="ellipses">{movie.movieNm} ({movie.movieNmEn})</div>
+                                            <div className="ellipses">{movie.movieNm}</div>
                                         </a>
                                     </h1>
                                     <div className="text-sm text-center">

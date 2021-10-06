@@ -17,15 +17,17 @@
 - [X] Front-End 화면기획 - 상세정보 > 썸네일
 - [X] Front-End 화면기획 - 상세정보 > 평점
 - [X] Front-End 화면기획 - 상세정보 > 내주변 상영관 바로가기
-- [ ] Front-End 연동 - 메인
-- [ ] Front-End 연동 - 상세정보
+- [X] Front-End 연동 - 영화진흥원 API 다이렉트로 우선 처리
+- [X] Front-End 연동 - 메인
+- [X] Front-End 연동 - 상세정보
 - [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
 - [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
 - [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
 - [X] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
 - [X] Front-End ReactJS 리덕스 개념은 gist에 별도로 정리해두자
-- [ ] Front-End ReactJS 리덕스 redux-saga / redux-thunk (비동기 작업처리 기본 미들웨어) * 참고 : https://react.vlpt.us/redux-middleware/10-redux-saga.html
-- [ ] Front-End ReactJS 영화 검색 - 디바운스
+- [X] Front-End ReactJS 리덕스 redux-thunk
+- [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
+- [ ] Front-End ReactJS 기능 Infinite Scroll
 - [ ] Back-End Springboot 로컬셋팅
 - [ ] Back-End DB-Mysql 로컬셋팅
 

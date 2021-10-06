@@ -1,28 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Detail from '../components/Detail';
-import { setModal } from '../modules/main';
+import { getDetail, setModal } from '../modules/main';
 
 const { useEffect } = React;
 
 const DetailContainer = ({
-    movieCd, setModal
+    detail, movieCd, setModal, getDetail
 }) => {
     useEffect(() => {
+        getDetail(movieCd);
+        return () => {
 
-    }, []);
+        }
+    }, [getDetail]);
     return (
-        <Detail code={movieCd} setModal={setModal} />
+        <Detail detail={detail} code={movieCd} setModal={setModal} />
     );
 };
 
 export default connect(
     //  State에 선언 방식은 state.[action.js].[state name]
     ({ main }) => ({
-        movieCd: main.movieCd
+        movieCd: main.movieCd,
+        detail: main.detail
     }),
     {
-        setModal
+        setModal,
+        getDetail
     }
 )(DetailContainer);
