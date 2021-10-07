@@ -15,16 +15,17 @@ export const endLoading = createAction(
 
 const initialSate = {};
 
-const loading = handleActions({
-    [START_LOADING]: (state, action) => ({
-        ...state,
-        [action.payload]: true
-    }),
-    [END_LOADING]: (state, action) => ({
-        ...state,
-        [action.payload]: false
-    })
-}, initialSate
+const loading = handleActions(
+    {
+        [START_LOADING]: (state, action) => ({
+            ...state,
+            [action.payload]: true
+        }),
+        [END_LOADING]: (state, action) => ({
+            ...state,
+            [action.payload]: false
+        })
+    }, initialSate
 );
 
 export default loading;

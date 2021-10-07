@@ -29,7 +29,8 @@
 - [X] Front-End ReactJS 리덕스 개념은 gist에 별도로 정리해두자
 - [X] Front-End ReactJS 리덕스 redux-thunk
 - [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
-- [ ] Front-End ReactJS 기능 Infinite Scroll
+- [X] Front-End ReactJS 기능 Infinite Scroll
+- [ ] Front-End ReactJS 리팩토링 - 컴포넌트 최적화
 - [ ] Back-End Springboot 로컬셋팅
 - [ ] Back-End DB-Mysql 로컬셋팅
 

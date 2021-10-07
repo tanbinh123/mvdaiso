@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <div>
-            <header className="w-full min-w-10 text-center p-2 text-2xl md:p-3 md:text-3xl">
+            <header className="w-full min-w-10 text-center p-3 text-2xl md:p-3 md:text-3xl">
                 <div className="inline-block relative">
                     <h2 className="font-extrabold tracking-tight text-green-600"><Link to="/">Movie Daiso</Link></h2>
                 </div>
