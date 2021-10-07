@@ -35,14 +35,12 @@
 - [ ] Back-End DB-Mysql 로컬셋팅
 
 ## Todo-3
-- [ ] Front-End 화면기획 - 메인 > 더보기 ( 무한-스크롤링 )
 - [ ] Front-End 화면기획 - 메뉴 > 오늘의 영화 추천
 - [ ] Front-End 화면기획 - 메뉴 > 박스오피스 영화
 - [ ] Front-End 화면기획 - 상세정보 > 댓글
 - [ ] Front-End CSS 모듈화
 - [ ] Front-End ReactJS 코드스플리팅
 - [ ] Back-End 날씨, 나이, 오늘 가장 많이 상영된 영화, 장르 등의 데이터를 기반으로 추천 매트릭스 로직 구현
-- [ ] Back-End springboot 작업 연동 시, BE
 
 ### Next
 - [ ] Front-End ReactJS 프레임워크 ( next ) 도입 검토
