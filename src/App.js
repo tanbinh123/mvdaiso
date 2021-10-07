@@ -7,7 +7,6 @@ import MainContainer from './containers/MainContainer';
 import About from './components/About';
 import Today from './components/MovieTodayRcmd';
 import Boxoffice from './components/MovieBoxOffice';
-import TestContainer from './containers/TestContainer';
 
 function App() {
 
@@ -36,7 +35,6 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/today" component={Today} />
           <Route path="/boxoffice" component={Boxoffice} />
-          <Route path="/test" component={TestContainer} />
         </Switch>
       </div>
       {/* Main End */}

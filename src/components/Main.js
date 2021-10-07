@@ -9,16 +9,25 @@ const Main = ({ list, modal, setModal }) => {
                     {list && (list.map((movie, idx) => (
                         <div key={movie.movieCd} className="movie-card group relative container mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 duration-200" onClick={() => setModal(movie.movieCd, true)}>
                             <div className="w-full h-full bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-80 lg:h-80 lg:aspect-none cursor-pointer">
-                                <div className="w-full h-full py-44 md:py-28 text-center absolute">
-                                    <span className="text-gray-500 text-2xl md:text-lg font-bold ellipses">
-                                        <a href="#" className="inline-block rounded-sm text-white 
-                                        bg-green-600 hover:bg-green-500 duration-300 
-                                        text-md font-bold 
-                                        mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
+                                <div className="w-full h-full py-40 md:py-20 text-center absolute">
+                                    <div className="text-gray-500 text-lg md:text-md font-bold ellipses">
+                                        <a href="#!" className="inline-block rounded-sm text-white 
+                                        bg-blue-600 hover:bg-blue-500 duration-300 
+                                        text-sm font-bold 
+                                        mr-1 md:mr-2 mb-2 px-7 md:px-9 py-2 
                                         opacity-90 hover:opacity-100">
-                                            {movie.movieCd}
+                                            OPEN:{(movie.openDt).substring(0, 4)}
                                         </a>
-                                    </span>
+                                    </div>
+                                    <div className="text-gray-500 text-lg md:text-md font-bold ellipses">
+                                        <a href="#!" className="inline-block rounded-sm text-white 
+                                        bg-green-600 hover:bg-green-500 duration-300 
+                                        text-sm font-bold 
+                                        mr-1 md:mr-2 mb-2 px-2 md:px-4 py-2 
+                                        opacity-90 hover:opacity-100">
+                                            CODE:{movie.movieCd}
+                                        </a>
+                                    </div>
                                 </div>
                                 <img
                                     // src={movie.imageSrc}

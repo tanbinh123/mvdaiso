@@ -55,8 +55,8 @@ import axios from 'axios';
 
 const key = "662aa9a93a6059904fdee2a56fd7f504";
 
-export const getMovie = (date) =>
-    axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=` + key + `&itemPerPage=50` + `&openStartDt=` + date)
+export const getMovie = ({ date, per_page }) =>
+    axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${key}&itemPerPage=${per_page}&openStartDt=${date}`)
 
 export const getMovieDetail = (code) =>
-    axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=` + key + `&movieCd=` + code)
+    axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${key}&movieCd=${code}`)

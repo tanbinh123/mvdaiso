@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
 import { getMain, setModal } from '../modules/main';
 
-const { useEffect } = React;
+window.onload = () => {
+    window.addEventListener("scroll", function () {
+
+        console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+
+        const limitMinScroll = 15;
+
+        if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
+
+            console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+
+
+
+        }
+    })
+}
+
 
 const MainContainer = ({
     list,
@@ -12,8 +28,11 @@ const MainContainer = ({
     setModal
 }) => {
     useEffect(() => {
-        getMain(2000, 2001);
+        // {a:1, b:2} 형태로 선언
+        getMain({ date: 2021, per_page: 5 });
     }, [getMain]);
+
+
     return (
         < Main
             list={list}

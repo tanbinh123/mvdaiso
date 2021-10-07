@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Detail from '../components/Detail';
 import { getDetail, setModal } from '../modules/main';
-
-const { useEffect } = React;
 
 const DetailContainer = ({
     detail, movieCd, setModal, getDetail
 }) => {
     useEffect(() => {
-        getDetail(movieCd);
-        return () => {
-
-        }
-    }, [getDetail]);
+        if (movieCd)
+            getDetail(movieCd);
+    }, [getDetail, movieCd]);
     return (
         <Detail detail={detail} code={movieCd} setModal={setModal} />
     );

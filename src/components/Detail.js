@@ -6,10 +6,10 @@ const Detail = ({ detail, code, setModal }) => {
         <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed inset-0 z-50 outline-none focus:outline-none bg-gray-500 bg-opacity-50" >
             <div className="relative w-auto my-6 mx-auto max-w-3xl w-11/12 h-5/6">
 
-                <div key={code} className="min-w-21 h-full border-1 border-gray-300 border-opacity-75 rounded-lg shadow-2xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <div className="min-w-21 h-full border-1 border-gray-300 border-opacity-75 rounded-lg shadow-2xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     <div className="flex items-start justify-between p-2 border-b border-solid rounded-t items-middle">
                         <h2 className="text-sm md:text-md font-medium">
-                            <a href="#" className="inline-block rounded-sm text-white bg-green-600 hover:bg-green-500 duration-300 text-xs font-bold mr-1 md:mr-2 px-2 md:px-4 py-1 opacity-90 hover:opacity-100">{code}</a>
+                            <a href="#!" className="inline-block rounded-sm text-white bg-green-600 hover:bg-green-500 duration-300 text-xs font-bold mr-1 md:mr-2 px-2 md:px-4 py-1 opacity-90 hover:opacity-100">{code}</a>
                             {detail && detail?.movieNm}
                         </h2>
 
@@ -18,17 +18,17 @@ const Detail = ({ detail, code, setModal }) => {
                         </div>
                     </div>
 
-                    <div className="h-full flex flex-col relative p-2 overflow-y-auto text-sm md:text-md">
+                    <div className="h-full flex flex-col relative p-2 overflow-y-auto text-xs md:text-sm">
                         <div className=" grid grid-cols-3 gap-4">
                             <div className="w-full h-full bg-red-100 ">
                                 <img
                                     // src={movie.imageSrc}
                                     src='/img/poster.jpeg'
                                     className="w-full h-full object-center object-cover"
-                                // alt={movie.movieNm}
+                                    alt={detail && detail?.movieNm}
                                 />
                             </div>
-                            <div className="col-span-2 w-full p-1 text-xs text-gray-800 text-left space-y-1 md:space-y-3">
+                            <div className="col-span-2 w-full p-1 text-gray-800 text-left space-y-1 md:space-y-2">
                                 <div className="grid grid-cols-3">
                                     <div className="font-medium">개봉일</div><div className="col-span-2 text-gray-500">{detail && detail?.openDt}</div>
                                 </div>
@@ -53,7 +53,7 @@ const Detail = ({ detail, code, setModal }) => {
                                 <div className="grid grid-cols-3">
                                     <div className="font-medium">배우</div><div className="col-span-2 text-gray-500">
                                         {detail && detail.actors?.map((value, key) => (
-                                            <span className="p-r-1">{value['peopleNm']}</span>
+                                            <span key={key} className="p-r-1">{value['peopleNm']}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -104,76 +104,27 @@ const Detail = ({ detail, code, setModal }) => {
                             </ul>
                             <div className="bg-gray-50">
                                 <div className="body border">
-                                    <div className="bg-red-200 w-12/12 h-96" id="moview-map">
+                                    <div className="hidden bg-red-200 w-12/12 h-96" id="moview-map">
                                         <div className="w-full h-full"> 지도 </div>
                                     </div>
-                                    <div className="hidden" id="movie-showing">
+                                    <div className="" id="movie-showing">
                                         <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
                                             <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
+                                            <div className="text my-auto mr-2">메가박스[부산]</div>
                                             <div className="text my-auto mr-2"></div>
                                             <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
                                         </div>
 
                                         <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
                                             <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
+                                            <div className="text my-auto mr-2">롯데시네마[구로]</div>
                                             <div className="text my-auto mr-2"></div>
                                             <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
                                         </div>
 
                                         <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
                                             <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
-                                            <div className="text my-auto mr-2"></div>
-                                            <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
-                                        </div>
-
-                                        <div className="msg px-2 py-2 border-l-2 border-green-500 flex text-xs shadow-xs text-gray-600 cursor-pointer hover:bg-gray-100">
-                                            <div className="name font-medium my-auto mr-2 text-green-600">08:00</div>
-                                            <div className="text my-auto mr-2">메가박스</div>
+                                            <div className="text my-auto mr-2">CGV[목동]</div>
                                             <div className="text my-auto mr-2"></div>
                                             <div className="text-xs mt-1 text-gray-500 font-thin flex-none ml-auto">1 hour ago</div>
                                         </div>
@@ -188,10 +139,10 @@ const Detail = ({ detail, code, setModal }) => {
                     {/* Modal Body End*/}
 
                     {/* Modal Footer Start*/}
-                    <div class="text-sm md:text-md bottom-0 left-0 py-2 px-2 md:px-6 border-t border-gray-200 w-full flex justify-end items-middle">
+                    <div className="text-sm md:text-md bottom-0 left-0 py-2 px-2 md:px-6 border-t border-gray-200 w-full flex justify-end items-middle">
                         <button
                             onClick={() => setModal(false)}
-                            class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-white focus:outline-none"
+                            className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-white focus:outline-none"
                         >닫기</button>
                     </div>
                     {/* Modal Footer End*/}

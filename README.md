@@ -13,10 +13,12 @@
 - [X] Front-End ReactJS SPA + Route
 
 ## Todo-2 ( * ro : Read Only )
+- [X] Front-End 환경변수 분기
 - [X] Front-End 화면기획 - 상세정보
 - [X] Front-End 화면기획 - 상세정보 > 썸네일
 - [X] Front-End 화면기획 - 상세정보 > 평점
 - [X] Front-End 화면기획 - 상세정보 > 내주변 상영관 바로가기
+- [X] Front-End 화면기획 - 푸터 변경
 - [X] Front-End 연동 - 영화진흥원 API 다이렉트로 우선 처리
 - [X] Front-End 연동 - 메인
 - [X] Front-End 연동 - 상세정보
