@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import Main from '../components/Main';
+import IndexPage from '../pages/index';
 import { getMain, setModal } from '../modules/main';
 
 const MainContainer = ({
@@ -11,27 +11,28 @@ const MainContainer = ({
     loadingList
 }) => {
     useEffect(() => {
-        // {a:1, b:2} 형태로 선언
-        getMain({ date: 2021, per_page: 10 });
 
-        window.onload = () => {
-            window.addEventListener("scroll", function () {
+        if (!list)
+            getMain({ date: 2021, per_page: 5 });
 
-                const limitMinScroll = 5;
+        window.addEventListener("scroll", function () {
 
-                console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-                if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
-                    console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-                    console.log('Called MovieList >');
+            const limitMinScroll = 5;
 
-                    getMain({ date: 2021, per_page: 10 });
-                }
-            })
-        }
+            console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+            if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
+                console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+                console.log('Called MovieList >');
+
+                // if ({ loadingList })
+                //     getMain({ date: 2021, per_page: 10 });
+            }
+        })
+
     }, [getMain]);
 
     return (
-        < Main
+        <IndexPage
             list={list}
             modal={modal}
             setModal={setModal}

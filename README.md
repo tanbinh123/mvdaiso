@@ -22,28 +22,33 @@
 - [X] Front-End 연동 - 영화진흥원 API 다이렉트로 우선 처리
 - [X] Front-End 연동 - 메인
 - [X] Front-End 연동 - 상세정보
-- [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
-- [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
-- [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
 - [X] Front-End ReactJS 리덕스 : 단일스토어 / 읽기전용 / 순수함수 준수
 - [X] Front-End ReactJS 리덕스 개념은 gist에 별도로 정리해두자
 - [X] Front-End ReactJS 리덕스 redux-thunk
-- [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
 - [X] Front-End ReactJS 기능 Infinite Scroll
-- [ ] Front-End ReactJS 리팩토링 - 컴포넌트 최적화
-- [ ] Back-End Springboot 로컬셋팅
-- [ ] Back-End DB-Mysql 로컬셋팅
 
 ## Todo-3
+- [ ] Front-End ReactJS Layouts 구조분기
+- [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
+- [ ] Front-End ReactJS 리팩토링 - 컴포넌트 최적화
+- [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
+- [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
 - [ ] Front-End 화면기획 - 메뉴 > 오늘의 영화 추천
 - [ ] Front-End 화면기획 - 메뉴 > 박스오피스 영화
 - [ ] Front-End 화면기획 - 상세정보 > 댓글
+- [ ] Front-End 화면기획 Error
+- [ ] Front-End 화면기획 검색
+- [ ] Front-End 화면기획 회원가입
+- [ ] Front-End 화면기획 로그인
 - [ ] Front-End CSS 모듈화
-- [ ] Front-End ReactJS 코드스플리팅
-- [ ] Back-End 날씨, 나이, 오늘 가장 많이 상영된 영화, 장르 등의 데이터를 기반으로 추천 매트릭스 로직 구현
+- [ ] Back-End Springboot 로컬셋팅
+- [ ] Back-End DB-Mysql 로컬셋팅
 
 ### Next
+- [ ] Front-End ReactJS 코드스플리팅
 - [ ] Front-End ReactJS 프레임워크 ( next ) 도입 검토
+- [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
+- [ ] Back-End 날씨, 나이, 오늘 가장 많이 상영된 영화, 장르 등의 데이터를 기반으로 추천 매트릭스 로직 구현
 
 ## Setup His
 ### 1) Tailwind 

@@ -10,7 +10,7 @@ const GET_MOVIE_LIST_SUCCESS = 'main/GET_MOVIE_LIST_SUCCESS';
 const GET_MOVIE_DETAIL = 'main/GET_MOVIE_DETAIL';
 const GET_MOVIE_DETAIL_SUCCESS = 'main/GET_MOVIE_DETAIL_SUCCESS';
 
-export const setModal = createAction(SET_MODAL, id => id, status => status);
+export const setModal = createAction(SET_MODAL);
 export const getMain = createRequestThunk(GET_MOVIE_LIST, api.getMovie, 'movieList');
 export const getDetail = createRequestThunk(GET_MOVIE_DETAIL, api.getMovieDetail, 'movieDetail');
 
@@ -18,15 +18,17 @@ export const getDetail = createRequestThunk(GET_MOVIE_DETAIL, api.getMovieDetail
 const initialState = {
     modal: false,
     list: "",
-    detail: ""
+    detail: "",
+    movieCd: "",
+    loadingList: ""
 }
 
 const main = handleActions(
     {
-        [SET_MODAL]: (state, { payload: movieCd, payload: modal }) => ({
+        [SET_MODAL]: (state, { payload: modal }) => ({
             ...state,
-            modal: modal,
-            movieCd: movieCd
+            modal: modal.status,
+            movieCd: modal.code
         }),
         [GET_MOVIE_LIST_SUCCESS]: (state, action) => ({
             ...state,
