@@ -13,21 +13,21 @@ const MainContainer = ({
     useEffect(() => {
 
         if (!list)
-            getMain({ date: 2021, per_page: 5 });
+            // getMain({ date: 2021, per_page: 5 });
 
-        window.addEventListener("scroll", function () {
+            window.addEventListener("scroll", function () {
 
-            const limitMinScroll = 5;
+                const limitMinScroll = 5;
 
-            console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-            if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
-                console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-                console.log('Called MovieList >');
+                console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+                if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
+                    console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+                    console.log('Called MovieList >');
 
-                // if ({ loadingList })
-                //     getMain({ date: 2021, per_page: 10 });
-            }
-        })
+                    // if ({ loadingList })
+                    //     getMain({ date: 2021, per_page: 10 });
+                }
+            })
 
     }, [getMain]);
 

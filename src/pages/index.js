@@ -7,7 +7,7 @@ const IndexPage = ({ list, modal, setModal, loading }) => {
     return (
         <Layout>
             < div className="flex" >
-                < main className="flex-grow w-full px-4 max-w-3xl mx-auto pb-16" >
+                < main className="flex-grow w-full px-4 max-w-2xl mx-auto pb-16" >
                     <div className="min-w-15 h-full grid grid-cols-3 gap-y-10 gap-x-3 md:gap-x-8">
                         {list && (list.map((movie, idx) => (
                             <div key={movie.movieCd && idx} className="movie-card group relative container mx-auto bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 duration-200" onClick={() => setModal({ status: true, code: movie.movieCd })}>
