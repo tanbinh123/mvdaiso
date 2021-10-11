@@ -5,12 +5,17 @@ import { getMovieDetail } from '../modules/movie';
 
 const MovieContainer = ({
     match,
+    history,
     detail,
     getMovieDetail
 }) => {
 
     // * 필수값 처리
     const code = match.params.code;
+
+    const goBack = () => {
+        history.goBack();
+    }
 
     useEffect(() => {
         if (code) {
@@ -21,7 +26,7 @@ const MovieContainer = ({
 
     }, [match, code, getMovieDetail])
     return (
-        <MoviePage code={code} detail={detail} />
+        <MoviePage code={code} detail={detail} goBack={goBack} />
     );
 };
 
