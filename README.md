@@ -32,6 +32,7 @@
 - [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
 - [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
 - [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
+- [X] Front-End 화면기획 - 로딩화면 처리
 - [X] Front-End 화면기획 - 검색
 - [X] Front-End 화면기획 - 상세정보 > 댓글
 - [X] Front-End 화면기획 - 전제댓글
