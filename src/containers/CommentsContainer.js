@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import MoviePage from '../pages/movie';
-import { getMovieDetail } from '../modules/movie';
+import CommentsPage from '../pages/comments';
 
-const MovieContainer = ({
+const CommentsContainer = ({
     match,
     history,
-    detail,
-    getMovieDetail
 }) => {
 
     // * 필수값 처리
@@ -19,24 +16,23 @@ const MovieContainer = ({
 
     useEffect(() => {
         if (code) {
-            if (!detail)
-                getMovieDetail(code);
+            console.log('Code>' + code)
         } else {
             console.log('Empty Code!')
         }
 
-    }, [match, code, getMovieDetail])
+    }, [match, code])
     return (
-        <MoviePage code={code} detail={detail} goBack={goBack} />
+        <CommentsPage code={code} goBack={goBack} />
     );
 };
 
 export default connect(
     //  State에 선언 방식은 state.[action.js].[state name]
-    ({ movie }) => ({
-        detail: movie.detail
+    ({ comments }) => ({
+
     }),
     {
-        getMovieDetail
+
     }
-)(MovieContainer);
+)(CommentsContainer);
