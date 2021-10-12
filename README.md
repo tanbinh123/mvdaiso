@@ -28,14 +28,13 @@
 - [X] Front-End ReactJS 기능 Infinite Scroll
 
 ## Todo-3
-- [ ] Front-End ReactJS Layouts 구조분기
+- [X] Front-End ReactJS Layouts 구조분기
 - [ ] Front-End ReactJS 기능 영화 검색 - 디바운스
-- [ ] Front-End ReactJS 리팩토링 - 컴포넌트 최적화
 - [ ] Front-End 연동 - 상세정보 > 썸네일 ( * Naver 연동 )  : ro
 - [ ] Front-End 연동 - 상세정보 > 평점 ( * Naver 연동 ) : ro
-- [ ] Front-End 화면기획 - 메뉴 > 오늘의 영화 추천
-- [ ] Front-End 화면기획 - 메뉴 > 박스오피스 영화
-- [ ] Front-End 화면기획 - 상세정보 > 댓글
+- [X] Front-End 화면기획 - 검색
+- [X] Front-End 화면기획 - 상세정보 > 댓글
+- [X] Front-End 화면기획 - 전제댓글
 - [ ] Front-End 화면기획 Error
 - [ ] Front-End 화면기획 검색
 - [ ] Front-End 화면기획 회원가입
@@ -45,6 +44,9 @@
 - [ ] Back-End DB-Mysql 로컬셋팅
 
 ### Next
+- [ ] Front-End ReactJS 리팩토링 - 컴포넌트 최적화
+- [ ] Front-End 화면기획 - 메뉴 > 오늘의 영화 추천
+- [ ] Front-End 화면기획 - 메뉴 > 박스오피스 영화
 - [ ] Front-End ReactJS 코드스플리팅
 - [ ] Front-End ReactJS 프레임워크 ( next ) 도입 검토
 - [ ] Front-End 연동 - 상세정보 > 내주변 상영관 바로가기 : ro
