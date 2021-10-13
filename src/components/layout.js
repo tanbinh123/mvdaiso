@@ -1,3 +1,8 @@
+/** 
+ *  Title : Layout Segments Components
+ *  Date : 2021.10.10
+ *  @honeypigman
+ */
 import React from 'react';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
