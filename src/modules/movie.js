@@ -1,3 +1,9 @@
+/** 
+ *  Title : Modules - movie Action
+ *  Date : 2021.10.01
+ *  Des : 영화 상세정보 액션
+ *  @honeypigman
+ */
 import { handleActions } from 'redux-actions';
 import * as api from '../lib/api';
 import createRequestThunk from '../lib/createRequestThunk';

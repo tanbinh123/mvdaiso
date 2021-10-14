@@ -1,3 +1,8 @@
+/** 
+ *  Title : Movie Container
+ *  Date : 2021.10.01
+ *  @honeypigman
+ */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import MoviePage from '../pages/movie';
@@ -13,11 +18,8 @@ const MovieContainer = ({
     // * 필수값 처리
     const code = match.params.code;
 
-    const goBack = () => {
-        history.goBack();
-    }
-
     useEffect(() => {
+
         if (code) {
             if (!detail)
                 getMovieDetail(code);
@@ -25,9 +27,9 @@ const MovieContainer = ({
             console.log('Empty Code!')
         }
 
-    }, [match, code, getMovieDetail])
+    }, [match, code, detail, getMovieDetail])
     return (
-        <MoviePage code={code} detail={detail} goBack={goBack} />
+        <MoviePage code={code} detail={detail} history={history} />
     );
 };
 

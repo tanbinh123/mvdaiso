@@ -1,3 +1,8 @@
+/** 
+ *  Title : Comments Container
+ *  Date : 2021.10.12
+ *  @honeypigman
+ */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import CommentsPage from '../pages/comments';
@@ -10,10 +15,6 @@ const CommentsContainer = ({
     // * 필수값 처리
     const code = match.params.code;
 
-    const goBack = () => {
-        history.goBack();
-    }
-
     useEffect(() => {
         if (code) {
             console.log('Code>' + code)
@@ -23,7 +24,7 @@ const CommentsContainer = ({
 
     }, [match, code])
     return (
-        <CommentsPage code={code} goBack={goBack} />
+        <CommentsPage code={code} history={history} />
     );
 };
 

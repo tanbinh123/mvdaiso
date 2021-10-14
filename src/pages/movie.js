@@ -1,9 +1,15 @@
+/** 
+ *  Title : View - movie
+ *  Date : 2021.10.10
+ *  Des : 영화 상세정보
+ *  @honeypigman
+ */
 import React from 'react';
 import Layout from '../components/layout';
 import { Link } from 'react-router-dom';
-import Loading from '../components/loading';
+// import Loading from '../components/loading';
 
-const moviePage = ({ code, detail, goBack }) => {
+const moviePage = ({ code, detail, history }) => {
     return (
         <Layout code={code}>
             {!detail && (
@@ -32,10 +38,10 @@ const moviePage = ({ code, detail, goBack }) => {
 
                         <hr className="py-1" />
 
-                        <section class="py-2 text-gray-600 mb-2">
-                            <h3 class="w-1/5 bg-gray-300 h-8 rounded-lg"></h3>
-                            <p class="bg-gray-300 w-full h-28 rounded-lg mt-1"></p>
-                        </section>
+                        <div className="py-2 text-gray-600 mb-2">
+                            <h3 className="w-1/5 bg-gray-300 h-8 rounded-lg"> </h3>
+                            <p className="bg-gray-300 w-full h-28 rounded-lg mt-1"></p>
+                        </div>
                     </div>
 
                 </main>
@@ -44,17 +50,17 @@ const moviePage = ({ code, detail, goBack }) => {
                 <main className="flex flex-col">
                     <div className="layout-margin w-full fixed bg-white z-1 items-middle">
                         <div className="inline-flex w-full p-2">
-                            <span className="cursor-pointer" onClick={goBack}>
+                            <span className="cursor-pointer" onClick={() => (history.goBack())}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
                             </span>
-                            <h2 className="flex-auto text-lg px-2">
+                            <h2 className="flex-auto text-md md:lg px-1">
                                 {detail?.movieNm}
                                 {/* <a href="#!" className="inline-block rounded-sm text-white bg-green-600 hover:bg-green-500 duration-300 text-xs font-bold mr-1 md:mr-2 px-2 md:px-4 py-1 opacity-90 hover:opacity-100">{code}</a> */}
                             </h2>
                         </div>
                     </div>
 
-                    <div className="flex flex-col p-3 overflow-y-auto text-xs md:text-sm mt-7">
+                    <div className="flex flex-col p-3 overflow-y-auto text-xs md:text-sm mt-7 mb-6">
 
                         <div className="flex flex-col w-full h-80 bg-gray-500 p-2 z-auto">
                             <div className="flex-auto">
@@ -106,29 +112,46 @@ const moviePage = ({ code, detail, goBack }) => {
                             </div>
                         </div>
 
+                        <div className="text-grey-white">
+                            <div className="flex w-full space-x-1">
+                                <div className="shadow w-full grey-white">
+                                    <div className="bg-blue-400 text-xs leading-none py-1 text-center text-white w-3/5"></div>
+                                </div>
+                                <div className="shadow w-full grey-white">
+                                    <div className="bg-yellow-300 text-xs leading-none py-1 text-center text-white w-2/5"></div>
+                                </div>
+                                <div className="shadow w-full grey-white">
+                                    <div className="bg-gray-200 text-xs leading-none py-1 text-center text-white w-1/5"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <hr className="py-1" />
 
-                        <section className="py-2 text-gray-600 mb-2">
+                        <div className="py-2 text-gray-600 mb-2">
                             <h3 className="text-base font-semibold">작품정보</h3>
                             <p className="text-sm mt-3">
                                 추억의 게임으로 동심 자극하는 제목과 달리 데스 게임을 통해 날것의 인간 군상을 보여주는 넷플릭스 시리즈. 황동혁 감독은 만화책에서 모티브를 얻었다고 밝혔으며, 시나리오 기획에만 무려 10년 이상을 들였다고 한다.
                                 추억의 게임으로 동심 자극하는 제목과 달리 데스 게임을 통해 날것의 인간 군상을 보여주는 넷플릭스 시리즈. 황동혁 감독은 만화책에서 모티브를 얻었다고 밝혔으며, 시나리오 기획에만 무려 10년 이상을 들였다고 한다.
                             </p>
-                        </section>
+                        </div>
 
-                        <section className="py-2 text-gray-600 mb-2">
+                        <div className="py-2 text-gray-600 mb-2">
                             <h3 className="text-base font-semibold">감독/출연</h3>
                             <p className="text-sm mt-3">
-                                <a href="#" className="inline-block rounded-full text-white 
+                                {detail.directors[0] && (
+                                    <a href="#!" className="inline-block rounded-full text-white 
                                     bg-red-400 hover:bg-red-500 duration-300 
                                     text-sm font-bold 
                                     mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
                                     opacity-90 hover:opacity-100">
-                                    {detail.directors[0]?.['peopleNm']}
-                                </a>
+                                        {detail.directors[0]['peopleNm']}
+                                    </a>
+                                )}
 
                                 {detail.actors?.map((value, key) => (
-                                    <a href="#" key={key} className="inline-block rounded-full text-white 
+                                    <a href="#!" key={key} className="inline-block rounded-full text-white 
                                     bg-blue-400 hover:bg-blue-500 duration-300 
                                     text-sm font-bold 
                                     mr-1 md:mr-2 mb-2 px-2 md:px-4 py-1 
@@ -137,9 +160,9 @@ const moviePage = ({ code, detail, goBack }) => {
                                     </a>
                                 ))}
                             </p>
-                        </section>
+                        </div>
 
-                        <section className="py-2 text-gray-600 mb-6">
+                        <div className="py-2 text-gray-600">
                             <h3 className="text-base font-semibold">전체리뷰</h3>
                             <div className="flex text-sm mt-3 items-center">
                                 <div className="w-full bg-white border shadow-sm px-4 py-3 rounded-lg">
@@ -169,7 +192,7 @@ const moviePage = ({ code, detail, goBack }) => {
                                     </div>
                                 </div>
                             </Link>
-                        </section>
+                        </div>
                     </div>
                 </main>
             )}

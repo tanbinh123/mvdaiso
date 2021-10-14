@@ -12,8 +12,6 @@ export default function InfiniteScroll({ method }) {
     useEffect(() => {
         let mounted = true;
         window.addEventListener("scroll", function () {
-
-            console.log('====>' + mounted);
             if (mounted) {
                 const limitMinScroll = 5;
                 console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);

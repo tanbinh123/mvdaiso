@@ -1,42 +1,49 @@
+/** 
+ *  Title : Main Container
+ *  Date : 2021.09.28
+ *  @honeypigman
+ */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import IndexPage from '../pages/index';
-import { getMain, setModal } from '../modules/main';
+import { getMain } from '../modules/main';
 
 const MainContainer = ({
     list,
-    modal,
-    getMain,
-    setModal,
-    loadingList
+    getMain
 }) => {
+
     useEffect(() => {
 
         if (!list)
             getMain({ date: 2021, per_page: 5 });
 
+        let infiniteScroll = true;
         window.addEventListener("scroll", function () {
+            if (infiniteScroll) {
+                const limitMinScroll = 1;
+                console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+                if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
+                    console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
+                    console.log('Called MovieList >');
 
-            const limitMinScroll = 5;
+                    // if ({ loadingList })
+                    // setTimeout(() => {
+                    //     getMain({ date: 2021, per_page: 2 });
+                    // }, 2000);
+                }
+            };
+        });
 
-            console.log('Now > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-            if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
-                console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
-                console.log('Called MovieList >');
+        return () => {
+            infiniteScroll = false;
+        }
 
-                // if ({ loadingList })
-                //     getMain({ date: 2021, per_page: 10 });
-            }
-        })
-
-    }, [getMain]);
+    }, [list]);
 
     return (
         <IndexPage
             list={list}
-            modal={modal}
-            setModal={setModal}
-            loading={loadingList}
         />
     );
 };
@@ -47,11 +54,9 @@ export default connect(
     //  State에 선언 방식은 state.[action.js].[state name]
     ({ main, loading }) => ({
         list: main.list,
-        modal: main.modal,
         loadingList: loading['main/GET_MOVIE_LIST']
     }),
     {
-        getMain,
-        setModal
+        getMain
     }
 )(MainContainer);

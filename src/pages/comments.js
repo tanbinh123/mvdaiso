@@ -1,17 +1,23 @@
+/** 
+ *  Title : View - comments
+ *  Date : 2021.10.12
+ *  Des : 영화 상세정보 - 전체 댓글
+ *  @honeypigman
+ */
 import React from 'react';
 import Layout from '../components/layout';
-import Loading from '../components/loading';
+// import Loading from '../components/loading';
 
-const commentsPage = ({ code, goBack }) => {
+const commentsPage = ({ code, history }) => {
     return (
         <Layout code={code}>
             <main className="flex flex-col">
                 <div className="layout-margin w-full fixed bg-white z-1 items-middle">
                     <div className="inline-flex w-full p-2">
-                        <span className="cursor-pointer" onClick={goBack}>
+                        <span className="cursor-pointer" onClick={() => (history.goBack())}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         </span>
-                        <h2 className="text-lg pl-2">
+                        <h2 className="text-md pl-2">
                             전체댓글
                         </h2>
                     </div>
@@ -19,7 +25,7 @@ const commentsPage = ({ code, goBack }) => {
 
                 {!code && (
                     <div className="animate-pulse flex flex-col p-3 overflow-y-auto mt-7">
-                        <section className="text-gray-600 mb-10">
+                        <div className="text-gray-600 mb-10">
                             <div className="flex text-sm mt-3 items-center">
                                 <div className="w-full bg-white border shadow-sm px-4 py-3 rounded-lg">
                                     <div className="flex items-center">
@@ -28,7 +34,7 @@ const commentsPage = ({ code, goBack }) => {
                                     <p class="bg-gray-200 w-full h-16 rounded-lg mt-1"></p>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 )}
 

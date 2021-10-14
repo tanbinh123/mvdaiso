@@ -1,3 +1,8 @@
+/** 
+ *  Title : Modules Duck - index
+ *  Date : 2021.10.01
+ *  @honeypigman
+ */
 import { combineReducers } from 'redux';
 import main from './main';
 import movie from './movie';

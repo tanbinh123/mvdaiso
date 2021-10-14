@@ -36,10 +36,10 @@
 - [X] Front-End 화면기획 - 검색
 - [X] Front-End 화면기획 - 상세정보 > 댓글
 - [X] Front-End 화면기획 - 전제댓글
-- [ ] Front-End 화면기획 Error
-- [ ] Front-End 화면기획 검색
-- [ ] Front-End 화면기획 회원가입
-- [ ] Front-End 화면기획 로그인
+- [X] Front-End 화면기획 - 로그인
+- [X] Front-End 화면기획 - 회원가입
+- [X] Front-End 화면기획 - 프로필
+- [X] Front-End 화면기획 Error
 - [ ] Front-End CSS 모듈화
 - [ ] Back-End Springboot 로컬셋팅
 - [ ] Back-End DB-Mysql 로컬셋팅
