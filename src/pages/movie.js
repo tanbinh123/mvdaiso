@@ -62,19 +62,22 @@ const moviePage = ({ code, detail, history }) => {
 
                     <div className="flex flex-col p-3 overflow-y-auto text-xs md:text-sm mt-7 mb-6">
 
-                        <div className="flex flex-col w-full h-80 bg-gray-500 p-2 z-auto">
-                            <div className="flex-auto">
-                            </div>
-                            <div className="flex w-full">
+                        <div className="flex flex-col w-full h-80 bg-gray-500 z-auto">
+                            <img
+                                className="w-full h-full opacity-20"
+                                src={detail?.image}
+                                alt={detail?.movieNm}
+                            />
+                            <div className="flex w-full p-2 z-50 movie-info">
                                 <div className="flex flex-col flex-auto">
                                     <div className="flex-auto"></div>
                                     <div>
-                                        <span className="border-solid rounded-sm border-1 text-white p-1">{detail && detail.genres[0]?.['genreNm']}</span>
-                                        <span className="text-gray-800 rounded-full bg-gray-100 text-xs p-1 mx-1">{(detail && detail.audits[0]?.['watchGradeNm']).toString().substring(0, 2)}</span>
+                                        <span className="border-solid rounded-sm border-1 text-white p-1">{detail && detail.repGenreNm}</span>
+                                        {/* <span className="text-gray-800 rounded-full bg-gray-100 text-xs p-1 mx-1">{(detail && detail.audits[0]?.['watchGradeNm']).toString().substring(0, 2)}</span> */}
                                         <h3 className="font-semibold text-lg text-white pt-2 tracking-wide">{detail && detail?.movieNm}</h3>
                                         <h4 className="text-xs text-gray-300 tracking-tighter ">{detail && detail?.movieNmEn}</h4>
                                         <p className="text-sm text-gray-200 tracking-tighter">
-                                            <span className="pr-1">#{detail.nations[0]?.['nationNm']}</span>
+                                            <span className="pr-1">#{detail.nationAlt}</span>
                                             <span className="pr-1">#{detail?.typeNm}</span>
                                             <span className="pr-1">#{detail?.showTm}분</span>
                                         </p>
@@ -83,8 +86,7 @@ const moviePage = ({ code, detail, history }) => {
                                 <div className="flex w-28 z-auto">
                                     <img
                                         className="w-full h-full"
-                                        // src={movie.imageSrc}
-                                        src='/img/poster.jpeg'
+                                        src={detail?.image}
                                         alt={detail?.movieNm}
                                     />
                                 </div>

@@ -21,13 +21,12 @@ const MovieContainer = ({
     useEffect(() => {
 
         if (code) {
-            if (!detail)
-                getMovieDetail(code);
+            getMovieDetail(code);
         } else {
             console.log('Empty Code!')
         }
 
-    }, [match, code, detail, getMovieDetail])
+    }, [])
     return (
         <MoviePage code={code} detail={detail} history={history} />
     );

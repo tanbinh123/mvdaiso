@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import IndexPage from '../pages/index';
 import { getMain } from '../modules/main';
 
+var per_page = 0;
 const MainContainer = ({
     list,
     getMain
@@ -16,7 +17,7 @@ const MainContainer = ({
     useEffect(() => {
 
         if (!list)
-            getMain({ date: 2021, per_page: 5 });
+            getMain({ per_page: per_page });
 
         let infiniteScroll = true;
         window.addEventListener("scroll", function () {
@@ -26,6 +27,9 @@ const MainContainer = ({
                 if (window.scrollY + document.documentElement.clientHeight > document.documentElement.scrollHeight - limitMinScroll) {
                     console.log('More Scroll > ' + window.scrollY, document.documentElement.clientHeight, document.documentElement.scrollHeight);
                     console.log('Called MovieList >');
+
+                    per_page = per_page + 1;
+                    getMain({ date: 2021, per_page: per_page });
 
                     // if ({ loadingList })
                     // setTimeout(() => {

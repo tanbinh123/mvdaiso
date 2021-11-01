@@ -5,13 +5,13 @@
  *  @honeypigman
  */
 import { handleActions } from 'redux-actions';
-import * as api from '../lib/api';
+import * as api from '../lib/restfulapi';
 import createRequestThunk from '../lib/createRequestThunk';
 
 const GET_MOVIE_LIST = 'main/GET_MOVIE_LIST';
 const GET_MOVIE_LIST_SUCCESS = 'main/GET_MOVIE_LIST_SUCCESS';
 
-export const getMain = createRequestThunk(GET_MOVIE_LIST, api.getMovie, 'movieList');
+export const getMain = createRequestThunk(GET_MOVIE_LIST, api.getMovie);
 
 // // Init Set
 const initialState = {

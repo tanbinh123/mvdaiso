@@ -30,8 +30,7 @@ const IndexPage = ({ list }) => {
                                     <div className="w-full h-full bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-80 lg:aspect-none cursor-pointer">
                                         <Link to={`m/${movie.movieCd}`}>
                                             <img
-                                                // src={movie.imageSrc}
-                                                src='/img/poster.jpeg'
+                                                src={movie.image}
                                                 className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                                 alt={movie.movieNm}
                                             />
